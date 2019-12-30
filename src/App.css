@@ -36,3 +36,67 @@
     transform: rotate(360deg);
   }
 }
+
+.plant-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding:.4em;
+  width: 50%;
+}
+
+.show-page-picture {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: .4em;
+  width: 60%;
+}
+
+.heading {
+  text-align: center;
+}
+.text {
+  text-align: center;
+}
+
+#comment-box {
+  width: 45em;
+  height: 5em;
+  word-wrap: break-word;
+}
+
+#log-plant-form {
+  text-align: center;
+}
+
+#homepage-image {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  /* margin-left: 40em;
+  margin-right: 10em;
+  margin-top: 0em;
+  margin-bottom: 0em; */
+  width: 50%;
+
+}
+
+#login {
+  text-align: center;
+}
+
+
+/* #another-homepage-image {
+
+  display: flex;
+  margin-left: 10em;
+  margin-right: 30em;
+  margin-top: -23em;
+  margin-bottom: 0em;
+  width: 30%;
+
+} */
+
+
+
