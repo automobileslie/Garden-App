@@ -5,7 +5,8 @@ export default class LogPlantForm extends React.Component{
 
    state={
     name: "",
-    img: ""
+    img: "",
+    plant_information: ""
     }
 
     changeInputField = (event) => {
@@ -18,7 +19,8 @@ export default class LogPlantForm extends React.Component{
         event.preventDefault();
         this.props.onSubmit({
             name: this.state.name,
-            img: this.state.img
+            img: this.state.img,
+            plant_information: this.state.plant_information
 
         })
 
@@ -28,10 +30,14 @@ export default class LogPlantForm extends React.Component{
     render(){
     return(
     <div id="log-plant-form">
-    <h2>Log a New Plant Here</h2>
+    <h2 id="log-new-plant-form-heading">Log a New Plant Here</h2>
     <form onSubmit={this.submitForm}>
+        <label htmlFor="name" >Name: </label>
         <input type="text" name="name" value={this.state.name} onChange={this.changeInputField} />
+        <label htmlFor="img">Url: </label>
         <input type="text" name="img" value={this.state.img} onChange={this.changeInputField} />
+        <label htmlFor="plant_information">Plant Information: </label>
+        <input type="text" name="plant_information" value={this.state.plant_information} onChange={this.changeInputField} />
         <input type= "submit" value="Submit" />
 
     </form>

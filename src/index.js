@@ -8,6 +8,7 @@ import HomePage from './HomePage';
 import Navbar from './Navbar';
 import YourGarden from './YourGarden';
 import Login from './Login';
+import Signup from './Signup';
 import * as serviceWorker from './serviceWorker';
 
 
@@ -21,7 +22,7 @@ ReactDOM.render((
     <Route exact path="/your_garden" component={YourGarden} />
     <Route exact path="/form" component={LogPlantForm} />
     <Route exact path="/login" component={Login} />
-    
+    <Route exact path="/signup" component={Signup} />    
     </div>
 </Router>),
 document.getElementById('root'));

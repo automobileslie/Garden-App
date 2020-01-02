@@ -13,6 +13,7 @@ showThesePlants = () => {
         <h2>{this.props.plant.name}</h2>
 <img src={this.props.plant.img} alt= {this.props.plant.name} className= "plant-image" onClick={()=> {this.props.pictureOnClick(this.props.plant)}}/>
         <button onClick={() =>{this.props.buttonOnClick(this.props.plant)}}>Add to your garden</button>
+        <button onClick={() =>{this.props.deleteOnClick(this.props.plant)}}>Delete this plant</button>
     </div>
     }
 

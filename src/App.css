@@ -86,6 +86,42 @@
   text-align: center;
 }
 
+#signup {
+  text-align: center;
+}
+
+.allPlantList {
+ 
+  width: 50%;
+}
+
+.your-garden {
+ 
+  width: 50%;
+}
+
+.main-div {
+  display: flex;
+}
+
+#update-plant-form {
+  text-align: center;
+}
+
+#featured-plant {
+  background-color: orange;
+}
+
+#editing-plant-form-heading {
+  background-color: yellow;
+}
+
+#log-new-plant-form-heading {
+  background-color: yellow;
+}
+
+
+
 
 /* #another-homepage-image {
 

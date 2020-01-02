@@ -23,13 +23,20 @@ const link = {
               background: 'orange',
             }}
           >Home</NavLink>
+          {/* <NavLink 
+          to="/signup"
+          exact
+          style={link}
+          activeStyle={{
+            background: 'orange',
+          }}> Sign Up</NavLink>
           <NavLink 
           to="/login"
           exact
           style={link}
           activeStyle={{
             background: 'orange'
-          }}>Log In</NavLink>
+          }}>Log In</NavLink> */}
           <NavLink
             to="/plants"
             exact
@@ -38,7 +45,7 @@ const link = {
               background: 'orange'
             }}
           >Plant Selection</NavLink>
-          <NavLink
+          {/* <NavLink
             to="/form"
             exact
             style={link}
@@ -53,7 +60,7 @@ const link = {
           activeStyle={{
             background: 'orange'
           }}
-          >Your Garden</NavLink>
+          >Your Garden</NavLink> */}
     
         </div>
       )

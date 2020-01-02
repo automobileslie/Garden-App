@@ -22,9 +22,8 @@ export default class YourGarden extends React.Component{
     })
 }
 
-// I am not sure where or how the notes should persist. I want them to be attached to a plant in
-// "Your Garden", but it might be easier to make the comments available to all and have them stored with the 
-// instance of the plant (when a note is submitted, it would be added to an array of notes that are an attribute of the plant).
+// The notes textbox does not currently do anything. I would need to have another class
+// and build out functions to make this work.
 
 
 
