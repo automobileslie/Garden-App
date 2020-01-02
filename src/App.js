@@ -50,11 +50,7 @@ class App extends React.Component{
 
       const theUpdatedGarden= this.state.selectedPlants.filter(the_clicked_plant => the_clicked_plant.id !== plant.id);
 
-      
-
-
-      
-
+      const theUpdatedFeaturedPlant= this.state.pictureClickedOn === plant ? [] : this.state.pictureClickedOn;
 
       fetch(`http://localhost:3000/plants/${plant_id}`, {
         method: "DELETE"
@@ -65,7 +61,7 @@ class App extends React.Component{
       console.log(newArray);
       this.setState({
         plants: newArray,
-        pictureClickedOn: [],
+        pictureClickedOn: theUpdatedFeaturedPlant,
         selectedPlants: theUpdatedGarden
       })
     })
