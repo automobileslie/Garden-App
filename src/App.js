@@ -128,6 +128,9 @@ class App extends React.Component{
     const theUpdatedImg= plant.img
     const theUpdatedPlantInformation= plant.plant_information
 
+    const thePlants= this.state.selectedPlants.filter(the_plant => the_plant.id !== plant.id)
+    console.log(thePlants)
+
     fetch(`http://localhost:3000/plants/${this.state.pictureClickedOn.id}`, {
       method: "PATCH",
       headers: {
@@ -146,8 +149,8 @@ class App extends React.Component{
 
       this.setState({
         plants: updatedPlants,
-        selectedPlants: [],
-        pictureClickedOn: []
+        selectedPlants: [...thePlants, plant],
+        pictureClickedOn: plant
 
       })
 
@@ -165,19 +168,21 @@ class App extends React.Component{
           <LogPlantForm onSubmit={this.onSubmit} />
           <PlantClickedOn pictureClickedOn={this.state.pictureClickedOn} pictureUnclick={this.pictureUnclick}/>
           </div>
+          <div>
+          <UpdatePlantForm pictureClickedOn={this.state.pictureClickedOn} updateSubmit={this.updateSubmit}/>
+        </div>
     <main className="main-div">
           <div className="allPlantList">
           <h1>Plant Selection</h1>
-          <p>Click on a picture below to get more information about a plant</p>
+          <p>Click on a picture below to get more information about a plant </p>
+          <p>and to have the ability to edit it</p>
+        
           <PlantIndex plants={this.state.plants} selectedPlants={this.state.selectedPlants} buttonOnClick={this.buttonOnClick} pictureOnClick={this.pictureOnClick} deleteOnClick={this.deleteOnClick}/>
           
         </div>
 
         <div className="your-garden">
         <YourGarden selectedPlants={this.state.selectedPlants} removePlant={this.removePlant}/>
-        </div>
-        <div>
-          <UpdatePlantForm pictureClickedOn={this.state.pictureClickedOn} updateSubmit={this.updateSubmit}/>
         </div>
         </main>
         </div>

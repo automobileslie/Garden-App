@@ -4,27 +4,27 @@ import { render } from '@testing-library/react';
 export default class UpdatePlantForm extends React.Component {
 
     state={
+        id: this.props.pictureClickedOn.id,
         name: "",
         img: "",
-        plant_information: "",
-        id: this.props.pictureClickedOn.id
+        plant_information: ""
         }
     
         changeInputField = (event) => {
          this.setState({
-            [event.target.name]: event.target.value,
-            id: this.props.pictureClickedOn.id
+            id: this.props.pictureClickedOn.id,
+            [event.target.name]: event.target.value
+            
             })
         }
     
         submitIt = (event) => {
             event.preventDefault();
             this.props.updateSubmit({
+                id: this.props.pictureClickedOn.id,
                 name: this.state.name,
                 img: this.state.img,
-                plant_information: this.state.plant_information,
-                id: this.props.pictureClickedOn.id
-    
+                plant_information: this.state.plant_information
             })
     
         }
@@ -36,7 +36,7 @@ export default class UpdatePlantForm extends React.Component {
 render(){
     return (
         <div>
-    <h3 className="heading" id="editing-plant-form-heading">Form For Editing a Plant</h3>
+    <h3 className="heading" id="editing-plant-form-heading">Form For Editing the Featured Plant</h3>
         <form id="update-plant-form" onSubmit={this.submitIt}>
         <label htmlFor="name" >Name: </label>
         <input type="text" name="name" value={this.state.name} placeholder={this.props.pictureClickedOn.name} onChange={this.changeInputField} />
