@@ -7,15 +7,8 @@ import PlantClickedOn from './PlantClickedOn';
 import UpdatePlantForm from './UpdatePlantForm';
 
 
-// Other models might be Garden, Gardener(the user), and Comment(for the notes).
-// CRUD will ideally be for Garden and Comment, but right now I am building it for the Plant model; the update method is updating plants but not selectedPlants (I have to work on the logic of that function)
-// If I have a login, I would like to use sessions to track the user's comments and changes to the user's garden.
-
-// I need to figure out how to have separate boxes and columns on the page.
-
-//Figure out how using routes changes the way props are passed up or down, etc. The form and Your Garden tabs on the NavBar do not currently work because of issues related to this.
-
-// When I click on a picture, I want to make the text appear beneath the picture instead of generating another copy of the picture at the end of the page (use nested routes and NavLink(?) to do this).
+// Other models to build out include Garden, User, and Comment(for the notes). The latter two exist in Rails but do not function, because I have to work on authorization. The last one does not exist yet.
+//Figure out how using routes changes the way props are passed up or down, etc. Add the login and signup to the Navbar.
 
 class App extends React.Component{
 
@@ -54,7 +47,15 @@ class App extends React.Component{
     deleteOnClick= (plant) => {
       
       const plant_id= plant.id
+
+      const theUpdatedGarden= this.state.selectedPlants.filter(the_clicked_plant => the_clicked_plant.id !== plant.id);
+
       
+
+
+      
+
+
       fetch(`http://localhost:3000/plants/${plant_id}`, {
         method: "DELETE"
       })
@@ -65,7 +66,7 @@ class App extends React.Component{
       this.setState({
         plants: newArray,
         pictureClickedOn: [],
-        selectedPlants: []
+        selectedPlants: theUpdatedGarden
       })
     })
   }
@@ -163,15 +164,15 @@ class App extends React.Component{
       return (
         <div>
         <div id="top-of-main-page">
-           <h1 className="heading" className="text">Plan A Garden</h1>
-    <p className="text">Get plant information, log a plant, and start imagining what you would like to grow in your garden</p>
+          <h1 className="heading" >Plan A Garden</h1>
+          <p className="text">Get plant information, log a plant, and start imagining what you would like to grow in your garden</p>
           <LogPlantForm onSubmit={this.onSubmit} />
           <PlantClickedOn pictureClickedOn={this.state.pictureClickedOn} pictureUnclick={this.pictureUnclick}/>
           </div>
           <div>
           <UpdatePlantForm pictureClickedOn={this.state.pictureClickedOn} updateSubmit={this.updateSubmit}/>
-        </div>
-    <main className="main-div">
+          </div>
+          <main className="main-div">
           <div className="allPlantList">
           <h1>Plant Selection</h1>
           <p>Click on a picture below to get more information about a plant </p>

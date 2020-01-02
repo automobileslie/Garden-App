@@ -3,10 +3,8 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route} from 'react-router-dom';
 import './index.css';
 import App from './App';
-import LogPlantForm from './LogPlantForm';
 import HomePage from './HomePage';
 import Navbar from './Navbar';
-import YourGarden from './YourGarden';
 import Login from './Login';
 import Signup from './Signup';
 import * as serviceWorker from './serviceWorker';
@@ -19,8 +17,6 @@ ReactDOM.render((
     <Navbar /> 
     <Route exact path="/" component={HomePage} />
     <Route exact path="/plants" component={App} />
-    <Route exact path="/your_garden" component={YourGarden} />
-    <Route exact path="/form" component={LogPlantForm} />
     <Route exact path="/login" component={Login} />
     <Route exact path="/signup" component={Signup} />    
     </div>

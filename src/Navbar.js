@@ -45,23 +45,6 @@ const link = {
               background: 'orange'
             }}
           >Plant Selection</NavLink>
-          {/* <NavLink
-            to="/form"
-            exact
-            style={link}
-            activeStyle={{
-              background: 'orange'
-            }}
-          >Log a Plant</NavLink>
-          <NavLink
-          to="/your_garden"
-          exact
-          style={link}
-          activeStyle={{
-            background: 'orange'
-          }}
-          >Your Garden</NavLink> */}
-    
         </div>
       )
     }
