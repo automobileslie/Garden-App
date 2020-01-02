@@ -4,6 +4,8 @@ import PlantIndex from './PlantIndex';
 import YourGarden from './YourGarden';
 import LogPlantForm from './LogPlantForm';
 import PlantClickedOn from './PlantClickedOn';
+import UpdatePlantForm from './UpdatePlantForm';
+
 
 // Other models might be Garden, Gardener(the user), and Comment(for the notes).
 // CRUD will ideally be for Garden and Comment, but right now I am building it for the Plant model; the update method is updating plants but not selectedPlants (I have to work on the logic of that function)
@@ -38,7 +40,8 @@ class App extends React.Component{
     }
 
     buttonOnClick= (plant) => {
-      console.log("aspirational gardening")
+      console.log("aspirational gardening");
+      
      if (!(this.state.selectedPlants.includes(plant))) {
       
       this.setState({
@@ -60,7 +63,9 @@ class App extends React.Component{
 
       console.log(newArray);
       this.setState({
-        plants: newArray
+        plants: newArray,
+        pictureClickedOn: [],
+        selectedPlants: []
       })
     })
   }
@@ -112,7 +117,6 @@ class App extends React.Component{
 
   }
   pictureUnclick= () => {
-    console.log("unclicked")
     this.setState({
       pictureClickedOn: []
     })
@@ -139,17 +143,17 @@ class App extends React.Component{
     })
     .then(r => r.json())
     .then((updatedPlants) => {
+
       this.setState({
-        plants: updatedPlants
+        plants: updatedPlants,
+        selectedPlants: [],
+        pictureClickedOn: []
 
       })
+
     })
 
-    this.pictureOnClick(plant);
-
   }
-
-  
 
   render() {
 
@@ -159,7 +163,7 @@ class App extends React.Component{
            <h1 className="heading" className="text">Plan A Garden</h1>
     <p className="text">Get plant information, log a plant, and start imagining what you would like to grow in your garden</p>
           <LogPlantForm onSubmit={this.onSubmit} />
-          <PlantClickedOn pictureClickedOn={this.state.pictureClickedOn} updateSubmit={this.updateSubmit} pictureUnclick={this.pictureUnclick}/>
+          <PlantClickedOn pictureClickedOn={this.state.pictureClickedOn} pictureUnclick={this.pictureUnclick}/>
           </div>
     <main className="main-div">
           <div className="allPlantList">
@@ -171,6 +175,9 @@ class App extends React.Component{
 
         <div className="your-garden">
         <YourGarden selectedPlants={this.state.selectedPlants} removePlant={this.removePlant}/>
+        </div>
+        <div>
+          <UpdatePlantForm pictureClickedOn={this.state.pictureClickedOn} updateSubmit={this.updateSubmit}/>
         </div>
         </main>
         </div>

@@ -28,6 +28,7 @@ export default class YourGarden extends React.Component{
 
 
 render(){
+    console.log(this.props.selectedPlants)
     return(
 
     <div className="garden-display">
