@@ -128,7 +128,12 @@ class App extends React.Component{
     const theUpdatedPlantInformation= plant.plant_information
 
     const thePlants= this.state.selectedPlants.filter(the_plant => the_plant.id !== plant.id)
-    console.log(thePlants)
+
+    const gardenPlants= this.state.selectedPlants.map(plant => {
+      return plant.id
+    })
+
+    const gardenUpdate=  gardenPlants.includes(plant.id) ? [...thePlants, plant] : this.state.selectedPlants 
 
     fetch(`http://localhost:3000/plants/${this.state.pictureClickedOn.id}`, {
       method: "PATCH",
@@ -148,7 +153,7 @@ class App extends React.Component{
 
       this.setState({
         plants: updatedPlants,
-        selectedPlants: [...thePlants, plant],
+        selectedPlants: gardenUpdate,
         pictureClickedOn: plant
 
       })
