@@ -1,40 +1,12 @@
+body {
+  background-color: blanchedalmond;
+  font-family: 'Courier New';
+  
+}
+
+
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
 
 .plant-image {
@@ -74,10 +46,6 @@
   display: flex;
   margin-left: auto;
   margin-right: auto;
-  /* margin-left: 40em;
-  margin-right: 10em;
-  margin-top: 0em;
-  margin-bottom: 0em; */
   width: 50%;
 
 }
@@ -120,19 +88,46 @@
   background-color: yellow;
 }
 
+.change-to-cats-button {
+  background-color: yellow;
+  width: 8%;
+  height: 20%;
+  font-family: 'Courier New';
+  font-weight: bold;
+  font-size: .75em; 
+}
 
+#add-to-garden-button {
+  background-color: yellow;
+  width: 25%;
+  height: 25%;
+  font-family: 'Courier New';
+  font-weight: bold;
+  font-size: .75em;
+}
 
+#delete-from-plant-selection-button {
+  background-color: orange;
+  width: 25%;
+  height: 25%;
+  font-family: 'Courier New';
+  font-weight: bold;
+  font-size: .75em;
+}
 
-/* #another-homepage-image {
+.submit-button {
+  background-color: orange;
+  font-family: 'Courier New';
+  font-weight: bold;
+  font-size: .75em;
+}
 
-  display: flex;
-  margin-left: 10em;
-  margin-right: 30em;
-  margin-top: -23em;
-  margin-bottom: 0em;
-  width: 30%;
-
-} */
+#remove-from-garden-button {
+  background-color: yellow;
+  font-family: 'Courier New';
+  font-weight: bold;
+  font-size: .75em;
+}
 
 
 

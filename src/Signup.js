@@ -5,13 +5,9 @@ export default class Signup extends React.Component{
 
 
 
-
-
-
-
     render(){
         return(
-            <div>
+            <div className="body">
                 <h2 className="heading">Sign Up</h2>
             <form id="signup">
                 <label htmlFor="username"> Username: </label>
@@ -25,7 +21,5 @@ export default class Signup extends React.Component{
             </div>
         )
     }
-    
-    
     
     }

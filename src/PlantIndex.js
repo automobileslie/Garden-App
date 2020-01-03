@@ -16,8 +16,6 @@ showThePlants= () => {
     })
 }
 
-
-
     render(){
         return (
         <div>
@@ -26,8 +24,4 @@ showThePlants= () => {
 
         )
     }
-
-
-
-
 }

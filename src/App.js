@@ -1,10 +1,12 @@
 import React from 'react';
 import './App.css';
-import PlantIndex from './PlantIndex';
-import YourGarden from './YourGarden';
-import LogPlantForm from './LogPlantForm';
-import PlantClickedOn from './PlantClickedOn';
-import UpdatePlantForm from './UpdatePlantForm';
+import Navbar from './Navbar'
+import HomePage from './HomePage';
+import Login from './Login';
+import Signup from './Signup';
+import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import MainPage from './MainPage'
+
 
 
 // Other models to build out include Garden, User, and Comment(for the notes). The latter two exist in Rails but do not function, because I have to work on authorization. The last one does not exist yet.
@@ -155,34 +157,44 @@ class App extends React.Component{
 
   }
 
+  changeToCats= () => {
+    const toCats= this.state.plants.map(plant => {
+       return {name: plant.name, img: "http://placekitten.com/200/300", plant_information: plant.plant_information, id: plant.id}
+     })
+
+     const gardenCats= this.state.selectedPlants.map(plant => {
+      return {name: plant.name, img: "http://placekitten.com/200/300", plant_information: plant.plant_information, id: plant.id}
+    })
+   
+       console.log(toCats)
+  
+        this.setState({
+          plants: toCats,
+          selectedPlants: gardenCats,
+          pictureClickedOn: []
+
+        })
+  
+  }
+
   render() {
 
       return (
-        <div>
-        <div id="top-of-main-page">
-          <h1 className="heading" >Plan A Garden</h1>
-          <p className="text">Get plant information, log a plant, and start imagining what you would like to grow in your garden</p>
-          <LogPlantForm onSubmit={this.onSubmit} />
-          <PlantClickedOn pictureClickedOn={this.state.pictureClickedOn} pictureUnclick={this.pictureUnclick}/>
-          </div>
-          <div>
-          <UpdatePlantForm pictureClickedOn={this.state.pictureClickedOn} updateSubmit={this.updateSubmit}/>
-          </div>
-          <main className="main-div">
-          <div className="allPlantList">
-          <h1>Plant Selection</h1>
-          <p>Click on a picture below to get more information about a plant </p>
-          <p>and to have the ability to edit it</p>
-        
-          <PlantIndex plants={this.state.plants} selectedPlants={this.state.selectedPlants} buttonOnClick={this.buttonOnClick} pictureOnClick={this.pictureOnClick} deleteOnClick={this.deleteOnClick}/>
+        <div >
           
+        <div >
+          <Router>
+          <Navbar plants={this.state.plants} changeToCats={this.changeToCats}/> 
+          <Switch>
+          <Route exact path="/" render={(renderProps) => <HomePage {...renderProps}/>} />
+          <Route exact path="/plants" render={(renderProps) => <MainPage {...renderProps} plants={this.state.plants} selectedPlants={this.state.selectedPlants} pictureClickedOn={this.state.pictureClickedOn} buttonOnClick={this.buttonOnClick} pictureOnClick={this.pictureOnClick} deleteOnClick={this.deleteOnClick} removePlant={this.removePlant} onSubmit={this.onSubmit} pictureUnclick={this.pictureUnclick} updateSubmit={this.updateSubmit}/>} />
+          <Route exact path="/login" component={Login} />
+          <Route exact path="/signup" component={Signup} />    
+          </Switch>
+        </Router>
+        </div>
         </div>
 
-        <div className="your-garden">
-        <YourGarden selectedPlants={this.state.selectedPlants} removePlant={this.removePlant}/>
-        </div>
-        </main>
-        </div>
   )}
 
 }

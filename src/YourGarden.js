@@ -11,12 +11,12 @@ export default class YourGarden extends React.Component{
         return <div>
             <h2>{plant.name}</h2>
             <img src={plant.img} alt={plant.name} className="plant-image" />
-            <button onClick={()=> {this.props.removePlant(plant)}}>Remove from garden</button>
+            <button id="remove-from-garden-button" onClick={()=> {this.props.removePlant(plant)}}>Remove from garden</button>
             <p>Notes:</p>
             <form>
             <textarea id="comment-box" name="name" wrap="hard"/>
             <br></br>
-            <input type="submit" value="Submit" />
+            <input className= "submit-button" type="submit" value="Submit" />
             </form>
         </div>
     })
@@ -25,10 +25,8 @@ export default class YourGarden extends React.Component{
 // The notes textbox does not currently do anything. I would need to have another class
 // and build out functions to make this work.
 
-
-
 render(){
-    console.log(this.props.selectedPlants)
+    
     return(
 
     <div className="garden-display">

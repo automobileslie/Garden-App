@@ -25,11 +25,8 @@ export default class UpdatePlantForm extends React.Component {
                 img: this.state.img,
                 plant_information: this.state.plant_information
             })
-    
         }
-
-
-
+        
         render(){
             return (
             <div>
@@ -41,7 +38,7 @@ export default class UpdatePlantForm extends React.Component {
                 <input type="text" name="img" value={this.state.img} placeholder={this.props.pictureClickedOn.img} onChange={this.changeInputField} />
                 <label htmlFor="plant_information">Plant Information: </label>
                 <input type="text" name="plant_information" value={this.state.plant_information} placeholder={this.props.pictureClickedOn.plant_information} onChange={this.changeInputField} />
-                <input type= "submit" value="Submit" />
+                <input className= "submit-button" type= "submit" value="Submit" />
                 </form>
             </div>   
     )}

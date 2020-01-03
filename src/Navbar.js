@@ -10,8 +10,9 @@ const link = {
     textDecoration: 'none',
     color: 'black',
   }
-   
+
   export default class Navbar extends React.Component {
+
     render() {
       return (
         <div>
@@ -23,7 +24,7 @@ const link = {
               background: 'orange',
             }}
           >Home</NavLink>
-          {/* <NavLink 
+          <NavLink 
           to="/signup"
           exact
           style={link}
@@ -36,7 +37,7 @@ const link = {
           style={link}
           activeStyle={{
             background: 'orange'
-          }}>Log In</NavLink> */}
+          }}>Log In</NavLink>
           <NavLink
             to="/plants"
             exact
@@ -45,6 +46,7 @@ const link = {
               background: 'orange'
             }}
           >Plant Selection</NavLink>
+          <button className="change-to-cats-button" onClick={this.props.changeToCats}>Turn Plants into Cats</button>
         </div>
       )
     }
