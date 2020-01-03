@@ -170,13 +170,11 @@ class App extends React.Component{
      const gardenCats= this.state.selectedPlants.map(plant => {
       return {name: plant.name, img: "http://placekitten.com/200/300", plant_information: plant.plant_information, id: plant.id}
     })
-   
-       console.log(toCats)
-  
+
         this.setState({
           plants: toCats,
           selectedPlants: gardenCats,
-          pictureClickedOn: []
+          pictureClickedOn: {name: this.state.pictureClickedOn.name, img: "http://placekitten.com/200/300", plant_information: this.state.pictureClickedOn.plant_information, id: this.state.pictureClickedOn.id}
 
         })
   
