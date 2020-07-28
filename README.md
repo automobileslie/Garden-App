@@ -1,5 +1,7 @@
 Plan a Garden
 
+Garden-planning app allowing users to imagine a garden they would like to create in real life while building a virtual one
+
 This is an application designed to help users imagine the kind of garden that they would like to create and then start to plan it. The idea for it came from the avid gardening I did last summer and from my appreciation of the community gardens all over New York City.
 
 The repository for the back-end of this application can be found here: https://github.com/automobileslie/Garden-App-API
