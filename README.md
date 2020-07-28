@@ -5,5 +5,7 @@ This is an application designed to help users imagine the kind of garden that th
 https://www.carlieanglemire.com/static/media/PlanAGardenVideo.5ba373b8.mp4
 
 ● Utilized Ruby on Rails to create an API rendered as JSON
+
 ● Stored data including updates, posts, and deletes from forms on the front-end using Ruby on Rails
+
 ● Built front-end functionality with React and React Router and styled the front-end with custom CSS
