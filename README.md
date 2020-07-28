@@ -4,7 +4,7 @@ This is an application designed to help users imagine the kind of garden that th
 
 The repository for the back-end of this application can be found here: https://github.com/automobileslie/Garden-App-API
 
-Go here for a demo of the project: https://www.carlieanglemire.com/static/media/PlanAGardenVideo.5ba373b8.mp4
+A demo of the project is available here: https://www.carlieanglemire.com/static/media/PlanAGardenVideo.5ba373b8.mp4
 
 ● Utilized Ruby on Rails to create an API rendered as JSON
 
