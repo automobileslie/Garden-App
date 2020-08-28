@@ -17,7 +17,7 @@ return (
 
 render () {
     return (
-        <p>{this.plantInfo()}</p>
+        <React.Fragment>{this.plantInfo()}</React.Fragment>
 )}
 
 }

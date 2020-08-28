@@ -1,8 +1,21 @@
 body {
   background-color: blanchedalmond;
   font-family: 'Courier New';
+  margin: 2em;
   
 }
+
+.homepage{
+ 
+  text-align: center;
+}
+
+#homepage-image {
+ margin: 1em;
+  width: 50%;
+}
+
+
 
 
 .App {
@@ -40,14 +53,6 @@ body {
 
 #log-plant-form {
   text-align: center;
-}
-
-#homepage-image {
-  display: flex;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
-
 }
 
 #login {
