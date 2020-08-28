@@ -9,20 +9,20 @@ export default class ShowPlants extends React.Component{
 
 showThesePlants = () => {
     
-    return <div>
+    return <React.Fragment>
         <h2>{this.props.plant.name}</h2>
 <img src={this.props.plant.img} alt= {this.props.plant.name} className= "plant-image" onClick={()=> {this.props.pictureOnClick(this.props.plant)}}/>
         <button id="add-to-garden-button" onClick={() =>{this.props.buttonOnClick(this.props.plant)}}>Add to your garden</button>
         <button id= "delete-from-plant-selection-button" onClick={() =>{this.props.deleteOnClick(this.props.plant)}}>Delete this plant</button>
-    </div>
+    </React.Fragment>
     }
 
     render(){
 
     return(
-    <div>
+    <React.Fragment>
     <p>{this.showThesePlants()}</p>
-    </div>
+    </React.Fragment>
     
     )
     }

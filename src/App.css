@@ -59,8 +59,10 @@ body {
 }
 
 .allPlantList {
- 
-  width: 50%;
+ display: flex;
+ justify-content: center;
+ flex-direction: column;
+ margin: 5em;
 }
 
 .your-garden {

@@ -9,18 +9,17 @@ showThePlants= () => {
 
     
     return this.props.plants.map(plant => { 
-       return <div>
+       return <React.Fragment>
         <ShowPlants plant={plant} buttonOnClick={this.props.buttonOnClick} pictureOnClick={this.props.pictureOnClick} deleteOnClick={this.props.deleteOnClick}/>
-        
-        </div>
+        </React.Fragment>
     })
 }
 
     render(){
         return (
-        <div>
+        <React.Fragment>
         {this.showThePlants()}
-        </div>
+        </React.Fragment>
 
         )
     }

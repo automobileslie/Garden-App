@@ -5,7 +5,8 @@ import HomePage from './HomePage';
 import Login from './Login';
 import Signup from './Signup';
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-import MainPage from './MainPage'
+import MainPage from './MainPage';
+import Garden from './Garden';
 
 
 
@@ -192,7 +193,9 @@ class App extends React.Component{
           <Route exact path="/" render={(renderProps) => <HomePage {...renderProps}/>} />
           <Route exact path="/plants" render={(renderProps) => <MainPage {...renderProps} plants={this.state.plants} selectedPlants={this.state.selectedPlants} pictureClickedOn={this.state.pictureClickedOn} buttonOnClick={this.buttonOnClick} pictureOnClick={this.pictureOnClick} deleteOnClick={this.deleteOnClick} removePlant={this.removePlant} onSubmit={this.onSubmit} pictureUnclick={this.pictureUnclick} updateSubmit={this.updateSubmit}/>} />
           <Route exact path="/login" component={Login} />
-          <Route exact path="/signup" component={Signup} />    
+          <Route exact path="/signup" component={Signup} />  
+          <Route exact path="/garden" render={(renderProps) => <Garden {...renderProps} removePlant={this.removePlant} selectedPlants={this.state.selectedPlants}/>} />
+  
           </Switch>
         </Router>
         </div>

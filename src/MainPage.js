@@ -1,6 +1,5 @@
 import React from 'react';
 import PlantIndex from './PlantIndex';
-import YourGarden from './YourGarden';
 import LogPlantForm from './LogPlantForm';
 import PlantClickedOn from './PlantClickedOn';
 import UpdatePlantForm from './UpdatePlantForm';
@@ -31,7 +30,7 @@ render(){
     <UpdatePlantForm pictureClickedOn={this.props.pictureClickedOn} updateSubmit={this.props.updateSubmit}/>
     </div>
 
-    <main className="main-div">
+    {/* <main className="main-div"> */}
 
     <div className="allPlantList">
     <h1>Plant Selection</h1>
@@ -40,11 +39,7 @@ render(){
     <PlantIndex plants={this.props.plants} selectedPlants={this.props.selectedPlants} buttonOnClick={this.props.buttonOnClick} pictureOnClick={this.props.pictureOnClick} deleteOnClick={this.props.deleteOnClick}/> 
     </div>
 
-    <div className="your-garden">
-    <YourGarden selectedPlants={this.props.selectedPlants} removePlant={this.props.removePlant}/>
-    </div> 
-
-    </main> 
+    {/* </main>  */}
 
     </div>
 
