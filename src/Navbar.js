@@ -24,20 +24,28 @@ const link = {
               background: 'orange',
             }}
           >Home</NavLink>
-          <NavLink 
-          to="/signup"
-          exact
-          style={link}
-          activeStyle={{
-            background: 'orange',
-          }}> Sign Up</NavLink>
+
+
+            {!this.props.userToken ?
+
           <NavLink 
           to="/login"
           exact
           style={link}
           activeStyle={{
             background: 'orange'
-          }}>Log In</NavLink>
+          }}>Log In/Sign Up</NavLink>
+          :
+          <NavLink 
+          onClick = {this.props.logOut}
+          to="/login"
+          exact
+          style={link}
+          activeStyle={{
+            background: 'orange'
+          }}>Sign Out</NavLink>
+        }
+
           <NavLink
             to="/plants"
             exact
