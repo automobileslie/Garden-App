@@ -76,27 +76,27 @@ body {
   flex-direction: column;
 }
 
+.div-for-plant-selection-buttons{
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
 .add-to-garden-button {
   background-color: yellow;
-  width: 25%;
-  height: 25%;
   font-family: 'Courier New';
   font-weight: bold;
   font-size: .75em;
-  margin-left: 16em;
-  margin-bottom: 1em;
+  margin-left: 1em;
   margin-top: 1em;
 }
 
 .delete-from-plant-selection-button {
   background-color: orange;
-  width: 25%;
-  height: 25%;
   font-family: 'Courier New';
   font-weight: bold;
   font-size: .75em;
-  margin-left: 16em;
-  margin-bottom: 1em;
+  margin-left: 1em;
   margin-top: 1em;
 }
 
