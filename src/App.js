@@ -5,10 +5,9 @@ import HomePage from './HomePage';
 import Login from './Login';
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import MainPage from './MainPage';
-import Garden from './Garden';
+import YourGarden from './YourGarden';
 
 class App extends React.Component{
-
       state = {
       plants: [],
       selectedPlants: [],
@@ -32,25 +31,20 @@ class App extends React.Component{
     }
 
     setToken = (token, id) => {
-
       localStorage.setItem("token", token)
       localStorage.setItem("id", id)
-
     fetch(`http://localhost:3000/users/${id}`, {
-  
     headers: {
       "Authorization": token
     }
       })
     .then(r => r.json())
     .then(user => {
-
       this.setState({
         username: user.username,
         userToken: token,
         userId: id,
         })
-
         let the_username= user.username
         localStorage.setItem("username", the_username)
       })
@@ -73,8 +67,6 @@ class App extends React.Component{
       })
       .then(r => r.json())
       .then((newArray) => {
-
-      console.log(newArray);
       this.setState({
         plants: newArray,
         pictureClickedOn: theUpdatedFeaturedPlant,
@@ -116,12 +108,10 @@ class App extends React.Component{
   }
 
   pictureOnClick= (plant) => {
-    
     if (!(this.state.pictureClickedOn.id===plant.id))
     this.setState({
       pictureClickedOn: plant
     })
-
   }
   pictureUnclick= () => {
     this.setState({
@@ -130,7 +120,6 @@ class App extends React.Component{
   }
 
   updateSubmit= (plant) => {
-    console.log(plant)
     const theUpdatedName= plant.name
     const theUpdatedImg= plant.img
     const theUpdatedPlantInformation= plant.plant_information
@@ -154,7 +143,6 @@ class App extends React.Component{
     })
     .then(r => r.json())
     .then((updatedPlants) => {
-
       this.setState({
         plants: updatedPlants,
         selectedPlants: gardenUpdate,
@@ -164,48 +152,28 @@ class App extends React.Component{
   }
 
   logOut = () => {
-
     this.setState({
       userId: null,
       userToken: null,
       username: "",
     })
-
     localStorage.clear()
   }
 
-  changeToCats= () => {
-    const toCats= this.state.plants.map(plant => {
-       return {name: plant.name, img: "http://placekitten.com/200/300", plant_information: plant.plant_information, id: plant.id}
-     })
-
-     const gardenCats= this.state.selectedPlants.map(plant => {
-      return {name: plant.name, img: "http://placekitten.com/200/300", plant_information: plant.plant_information, id: plant.id}
-    })
-        this.setState({
-          plants: toCats,
-          selectedPlants: gardenCats,
-          pictureClickedOn: {name: this.state.pictureClickedOn.name, img: "http://placekitten.com/200/300", plant_information: this.state.pictureClickedOn.plant_information, id: this.state.pictureClickedOn.id}
-        })
-  }
-
   render() {
-
-    console.log(this.state)
-
       return (
-        <div >
+        <React.Fragment>
           <Router>
-          <Navbar logOut = {this.logOut} userToken = {this.state.userToken} plants={this.state.plants} changeToCats={this.changeToCats}/> 
+          <Navbar logOut = {this.logOut} userToken = {this.state.userToken} plants={this.state.plants}/> 
           <Switch>
           <Route exact path="/" render={(renderProps) => <HomePage {...renderProps}/>} />
           <Route exact path="/plants" render={(renderProps) => <MainPage {...renderProps} plants={this.state.plants} selectedPlants={this.state.selectedPlants} pictureClickedOn={this.state.pictureClickedOn} buttonOnClick={this.buttonOnClick} pictureOnClick={this.pictureOnClick} deleteOnClick={this.deleteOnClick} removePlant={this.removePlant} onSubmit={this.onSubmit} pictureUnclick={this.pictureUnclick} updateSubmit={this.updateSubmit}/>} />
           <Route exact path="/login" render={(renderProps) => <Login {...renderProps} setToken = {this.setToken}/>} />
-          <Route exact path="/garden" render={(renderProps) => <Garden {...renderProps} removePlant={this.removePlant} selectedPlants={this.state.selectedPlants}/>} />
+          <Route exact path="/garden" render={(renderProps) => <YourGarden {...renderProps} removePlant={this.removePlant} selectedPlants={this.state.selectedPlants}/>} />
   
           </Switch>
         </Router>
-        </div>
+        </React.Fragment>
   )}
 }
 export default App;

@@ -119,7 +119,7 @@ render(){
             <label htmlFor="password">Password: </label>
             <input type="password" name="password" value = {this.state.password} onChange={this.changeInputField}/>
             <br></br>
-            <input type="submit" value="submit" />
+            <input className = "login-and-sign-up-submit" type="submit" value="submit" />
         </form>
         <p className = "toggle-login" onClick = {this.toggleSignUpAndLogin}>Need to create an account?</p>
         </div>
@@ -135,7 +135,7 @@ render(){
                 <label htmlFor="password">Password: </label>
                 <input type="password" name="password" value = {this.state.password} onChange={this.changeInputField}/>
                 <br></br>
-                <input type="submit" value="submit" />
+                <input className = "login-and-sign-up-submit" type="submit" value="submit" />
             </form>
             <p className = "toggle-login" onClick = {this.toggleSignUpAndLogin}>Already have an account?</p>
             </div>

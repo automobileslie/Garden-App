@@ -62,9 +62,7 @@ const link = {
               background: 'orange',
             }}
           >Your Garden</NavLink>
-        
-          <button className="change-to-cats-button" onClick={this.props.changeToCats}>Turn Plants into Cats</button>
-        </div>
+          </div>
       )
     }
   }

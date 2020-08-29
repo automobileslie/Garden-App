@@ -1,53 +1,39 @@
 body {
   background-color: blanchedalmond;
   font-family: 'Courier New';
+  font-size: 1.5em;
   margin: 2em;
   text-align: center;
-  
 }
 
 .homepage{
- 
-  text-align: center;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
 }
 
 #homepage-image {
- margin: 1em;
-  width: 50%;
+  width: 30%;
 }
 
 .toggle-login:hover {
-
   color:grey;
 }
 
-
-
-.App {
-  text-align: center;
-}
-
-.plant-image {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding:.4em;
-  width: 50%;
-}
-
 .show-page-picture {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+ text-align: center;
   padding: .4em;
   width: 60%;
 }
 
 .heading {
   text-align: center;
+  margin-top: 2em;
 }
 .text {
-  text-align: center;
+  margin-left: 10em;
+  margin-right: 10em;
+  text-align: left
 }
 
 #comment-box {
@@ -68,17 +54,57 @@ body {
   text-align: center;
 }
 
+#plant-selection-heading{
+  background-color: orange;
+  margin-top: 2em;
+}
+
 .allPlantList {
  display: flex;
  justify-content: center;
  flex-direction: column;
- margin: 5em;
+}
+
+.plant-image {
+  width: 55%;
+  margin-left: 12em;
+}
+
+.plant-tile{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.add-to-garden-button {
+  background-color: yellow;
+  width: 25%;
+  height: 25%;
+  font-family: 'Courier New';
+  font-weight: bold;
+  font-size: .75em;
+  margin-left: 16em;
+  margin-bottom: 1em;
+  margin-top: 1em;
+}
+
+.delete-from-plant-selection-button {
+  background-color: orange;
+  width: 25%;
+  height: 25%;
+  font-family: 'Courier New';
+  font-weight: bold;
+  font-size: .75em;
+  margin-left: 16em;
+  margin-bottom: 1em;
+  margin-top: 1em;
 }
 
 .your-garden {
- 
-  width: 50%;
-}
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+ }
 
 .main-div {
   display: flex;
@@ -100,46 +126,34 @@ body {
   background-color: yellow;
 }
 
-.change-to-cats-button {
-  background-color: yellow;
-  width: 8%;
-  height: 20%;
-  font-family: 'Courier New';
-  font-weight: bold;
-  font-size: .75em; 
-}
-
-#add-to-garden-button {
-  background-color: yellow;
-  width: 25%;
-  height: 25%;
-  font-family: 'Courier New';
-  font-weight: bold;
-  font-size: .75em;
-}
-
-#delete-from-plant-selection-button {
-  background-color: orange;
-  width: 25%;
-  height: 25%;
-  font-family: 'Courier New';
-  font-weight: bold;
-  font-size: .75em;
-}
-
 .submit-button {
   background-color: orange;
   font-family: 'Courier New';
   font-weight: bold;
   font-size: .75em;
+  margin-left: 1em;
+  margin-top: 1em;
+  margin-bottom: 2em;
+  width: 8em;
+  text-align: center;
 }
 
-#remove-from-garden-button {
+.form-input-field{
+  margin-right: 1em;
+}
+
+.remove-from-garden-button {
   background-color: yellow;
   font-family: 'Courier New';
   font-weight: bold;
   font-size: .75em;
+  width: 15em;
+  margin-top: 2em;
+  margin-left: 30em;
 }
 
-
+.login-and-sign-up-submit{
+  margin-left: 11em;
+  width: 11.5em;
+}
 
